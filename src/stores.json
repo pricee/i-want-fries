@@ -1,0 +1,74 @@
+{
+  "stores": [
+    {
+      "name": "In n Out",
+      "price": "2.75",
+      "thickness": 2,
+      "potatoyness": 5,
+      "saltiness": 3,
+      "crispiness": 2,
+      "overall": 5,
+      "comments": "the best!"
+    },
+    {
+      "name": "Tasty Burger",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    },
+    {
+      "name": "Tasty Burger 2",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    },
+    {
+      "name": "Tasty Burger3",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    },
+    {
+      "name": "Tasty Burger4",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    },
+    {
+      "name": "Tasty Burger5",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    },
+    {
+      "name": "Tasty Burger6",
+      "price": "4",
+      "thickness": 3,
+      "potatoyness": 3,
+      "saltiness": 4,
+      "crispiness": 3,
+      "overall": 4,
+      "comments": "also good!"
+    }
+  ]
+}
