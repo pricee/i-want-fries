@@ -1,19 +1,52 @@
 .App {
   text-align: center;
   height: 100vh;
-  display:flex;
+}
+
+.site-title {
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.site-subtitle {
+  font-size:20px;
+  margin-bottom: 20px;
 }
 
 .stores {
-  flex: 1;
+  width: 100vw !important;
+}
+
+.row {
+  width: 100vw !important;
 }
 
 .Store {
   background-color: white;
   margin: 20px;
+  border-radius:17px;
 }
+
+.store-section-right {
+  padding-bottom: 20px !important;
+  padding-left: 10px !important;
+  padding-right: 20px !important;
+}
+
+.store-section-left {
+  padding-bottom: 20px !important;
+  padding-left: 20px !important;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .stats {
   text-align: right;
   padding: 5px;
+}
+
+.comments {
+  word-wrap: break-word;
+  font-size: 15px;
 }
