@@ -12,6 +12,7 @@ function App() {
           {renderStores(ratedStores)}
           {renderStores(unratedStores)}
       </Grid>
+      <div className="bottom-text">By <a href="https://github.com/pricee/i-want-fries" target="_blank">Emma Price</a></div>
     </div>
   );
 }

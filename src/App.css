@@ -19,6 +19,7 @@
 
 .row {
   width: 100vw !important;
+  margin: -20px !important;
 }
 
 .Store {
@@ -51,4 +52,8 @@
 .comments {
   word-wrap: break-word;
   font-size: 15px;
+}
+
+.bottom-text {
+  padding-top: 30px;
 }
