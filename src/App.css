@@ -28,8 +28,13 @@
   border-radius:17px;
 }
 
-.store-section {
-  padding-bottom: 20px !important;
+.store-top {
+  padding: 15px;
+}
+
+.address {
+  padding: 10px;
+  font-size: 15px;
 }
 
 .store-section .right {

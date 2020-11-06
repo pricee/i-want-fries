@@ -1,6 +1,6 @@
 const Papa = require('papaparse');
 const fs = require('fs');
-const csvFile = fs.readFileSync('/Users/emmaprice/Downloads/I Want Fries - Sheet1 (2).csv');
+const csvFile = fs.readFileSync('/Users/emmaprice/Downloads/I Want Fries - Sheet1 (3).csv');
 const csvData = csvFile.toString();
 
 (async () => {

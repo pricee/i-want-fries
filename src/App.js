@@ -35,8 +35,8 @@ function renderStores(stores) {
                     return <Grid className="single-store" key={store.Location} item xs={4}>
                         <Store
                             storeName={store.Location}
+                            address={store.Address}
                             sizes={store.sizes}
-                            // price={store.Price}
                             thickness={store.Thickness}
                             potatoyness={store.Potatoyness}
                             saltiness={store.Saltiness}
@@ -71,15 +71,15 @@ function Store(props) {
               <Grid container item xs style={{ padding:15 }} justify="center">
                       <div style={{fontSize:30 }}><b>{props.storeName}</b></div>
               </Grid>
-              <Grid className="store-section" container item xs borderRadius={20} justify="center">
-                  <div style={{ fontSize:20 }}><b>Coming Soon...</b></div>
+              <Grid container item xs borderRadius={20} justify="center">
+                  <div style={{ fontSize:20, paddingBottom:20 }}><b>Coming Soon...</b></div>
               </Grid>
           </Grid>);
   }
 
   return (
       <Grid container className="Store" direction="column">
-          <Grid container item xs style={{padding:15}}>
+          <Grid className="store-top" container item xs>
               <Grid item xs={8}>
                   <div style={{fontSize:30}}><b>{props.storeName}</b></div>
               </Grid>
@@ -102,6 +102,9 @@ function Store(props) {
                   <div><b><i>Comments:</i></b></div>
                   <div className="comments">{props.comments}</div>
               </Grid>
+          </Grid>
+          <Grid className="address" item xs justify="center">
+              <div><i>{props.address}</i></div>
           </Grid>
       </Grid>
   );
