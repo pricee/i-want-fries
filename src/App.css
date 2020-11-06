@@ -27,14 +27,16 @@
   border-radius:17px;
 }
 
-.store-section-right {
+.store-section {
   padding-bottom: 20px !important;
+}
+
+.store-section .right {
   padding-left: 10px !important;
   padding-right: 20px !important;
 }
 
-.store-section-left {
-  padding-bottom: 20px !important;
+.store-section .left {
   padding-left: 20px !important;
   display: flex;
   flex-direction: column;

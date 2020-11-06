@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-const { stores } = require('./stores');
+const { ratedStores, unratedStores } = require('./stores1');
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       <h1 className="site-title">I Want Fries</h1>
       <div className="site-subtitle">Because, let's be honest, all we really want are fries</div>
       <Grid container className="stores" direction="column" spacing={0}>
-          {renderStores()}
+          {renderStores(ratedStores)}
+          {renderStores(unratedStores)}
       </Grid>
     </div>
   );
@@ -17,7 +18,7 @@ function App() {
 
 
 
-function renderStores() {
+function renderStores(stores) {
     const storesGrid = [];
     for (let i = 0; i < stores.length; i +=3) {
         if (i + 3 > stores.length) {
@@ -30,16 +31,17 @@ function renderStores() {
         return (
             <Grid className="row" container item justify="center" spacing={3}>
                 {row.map(store => {
-                    return <Grid className="single-store" key={store.name} item xs={4}>
+                    return <Grid className="single-store" key={store.Location} item xs={4}>
                         <Store
-                            storeName={store.name}
-                            price={store.price}
-                            thickness={store.thickness}
-                            potatoyness={store.potatoyness}
-                            saltiness={store.saltiness}
-                            crispiness={store.crispiness}
-                            overall={store.overall}
-                            comments={store.comments}
+                            storeName={store.Location}
+                            sizes={store.sizes}
+                            // price={store.Price}
+                            thickness={store.Thickness}
+                            potatoyness={store.Potatoyness}
+                            saltiness={store.Saltiness}
+                            crispiness={store.Crispiness}
+                            overall={store.EmmaOverall}
+                            comments={store.Comments}
                         />
                     </Grid>
                 })}
@@ -47,7 +49,33 @@ function renderStores() {
     });
 }
 
+function getPrice(price) {
+    if (price === "") {
+        return "";
+    } else {
+        return "$" + parseFloat(price).toFixed(2);
+    }
+}
+
+function showSizes(sizes) {
+    return sizes.map(sizeInfo =>
+            <div style={{fontSize:18}}><b>{sizeInfo.size + ": " + getPrice(sizeInfo.price)}</b></div>
+    )
+}
+
 function Store(props) {
+  if (props.thickness === "") {
+      return (
+          <Grid container className="Store comingSoon" direction="column">
+              <Grid container item xs style={{ padding:15 }} justify="center">
+                      <div style={{fontSize:30 }}><b>{props.storeName}</b></div>
+              </Grid>
+              <Grid className="store-section" container item xs borderRadius={20} justify="center">
+                  <div style={{ fontSize:20 }}><b>Coming Soon...</b></div>
+              </Grid>
+          </Grid>);
+  }
+
   return (
       <Grid container className="Store" direction="column">
           <Grid container item xs style={{padding:15}}>
@@ -55,11 +83,11 @@ function Store(props) {
                   <div style={{fontSize:30}}><b>{props.storeName}</b></div>
               </Grid>
               <Grid item xs={4}>
-                  <div style={{fontSize:25}}><b>{`$${props.price}`}</b></div>
+                  {showSizes(props.sizes)}
               </Grid>
           </Grid>
           <Grid container item xs borderRadius={20}>
-              <Grid className="store-section-left" item xs={4} justify="center">
+              <Grid className="store-section left" item xs={4} justify="center">
                   <div className="all-stats">
                       <div className="stats"><b><i>Thickness: </i></b>{props.thickness}</div>
                       <div className="stats"><b><i>Saltiness: </i></b>{props.saltiness}</div>
@@ -67,7 +95,7 @@ function Store(props) {
                       <div className="stats"><b><i>Crispiness: </i></b>{props.crispiness}</div>
                   </div>
               </Grid>
-              <Grid className="store-section-right" item xs={8}>
+              <Grid className="store-section right" item xs={8}>
                   <div style={{fontSize:20}}><b>Emma's Score</b></div>
                   <div style={{fontSize:50}}>{props.overall}</div>
                   <div><b><i>Comments:</i></b></div>
